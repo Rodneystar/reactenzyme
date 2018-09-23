@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import { hot } from 'react-hot-loader'
-import SubComp from './SubComp'
+import RunDown from './RunDown'
 
 class App extends Component {
   constructor() {
@@ -21,12 +21,16 @@ class App extends Component {
     // this.getProps();
   }
 
+  newFunction() {
+    return 2;
+  }
+
 
   render() {
     return(
       <div>
           { `${JSON.stringify(this.state.jsonTable)} we're here` }
-          <SubComp />
+          <RunDown />
       </div>
     )
   }

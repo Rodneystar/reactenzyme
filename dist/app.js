@@ -15410,10 +15410,9 @@ if(!$Number(' 0o1') || !$Number('0b1') || $Number('+0x1')){
   };
   for(var keys = __webpack_require__(11) ? gOPN(Base) : (
     // ES3:
-    'MAX_VALUE,MIN_VALUE,NaN,NEGATIVE_INFINITY,POSITIVE_INFINITY,' +
+    ('MAX_VALUE,MIN_VALUE,NaN,NEGATIVE_INFINITY,POSITIVE_INFINITY,' +
     // ES6 (in case, if modules with ES6 Number statics required before):
-    'EPSILON,isFinite,isInteger,isNaN,isSafeInteger,MAX_SAFE_INTEGER,' +
-    'MIN_SAFE_INTEGER,parseFloat,parseInt,isInteger'
+    'EPSILON,isFinite,isInteger,isNaN,isSafeInteger,MAX_SAFE_INTEGER,' + 'MIN_SAFE_INTEGER,parseFloat,parseInt,isInteger')
   ).split(','), j = 0, key; keys.length > j; j++){
     if(has(Base, key = keys[j]) && !has($Number, key)){
       dP($Number, key, gOPD(Base, key));
@@ -15530,7 +15529,7 @@ var $export      = __webpack_require__(0)
   , toInteger    = __webpack_require__(44)
   , aNumberValue = __webpack_require__(144)
   , repeat       = __webpack_require__(111)
-  , $toFixed     = 1..toFixed
+  , $toFixed     = (1).toFixed
   , floor        = Math.floor
   , data         = [0, 0, 0, 0, 0, 0]
   , ERROR        = 'Number.toFixed: incorrect invocation!'
@@ -15581,10 +15580,10 @@ var log = function(x){
 };
 
 $export($export.P + $export.F * (!!$toFixed && (
-  0.00008.toFixed(3) !== '0.000' ||
-  0.9.toFixed(0) !== '1' ||
-  1.255.toFixed(2) !== '1.25' ||
-  1000000000000000128..toFixed(0) !== '1000000000000000128'
+  (0.00008).toFixed(3) !== '0.000' ||
+  (0.9).toFixed(0) !== '1' ||
+  (1.255).toFixed(2) !== '1.25' ||
+  (1000000000000000100).toFixed(0) !== '1000000000000000128'
 ) || !__webpack_require__(6)(function(){
   // V8 ~ Android 4.3-
   $toFixed.call({});
@@ -15648,7 +15647,7 @@ $export($export.P + $export.F * (!!$toFixed && (
 var $export      = __webpack_require__(0)
   , $fails       = __webpack_require__(6)
   , aNumberValue = __webpack_require__(144)
-  , $toPrecision = 1..toPrecision;
+  , $toPrecision = (1).toPrecision;
 
 $export($export.P + $export.F * ($fails(function(){
   // IE7-
@@ -18690,7 +18689,7 @@ function hasArrayNature(obj) {
     // not null/false
     !!obj && (
     // arrays are objects, NodeLists are functions in Safari
-    typeof obj == 'object' || typeof obj == 'function') &&
+    (typeof obj == 'object' || typeof obj == 'function')) &&
     // quacks like an array
     'length' in obj &&
     // not window
@@ -18699,11 +18698,10 @@ function hasArrayNature(obj) {
     // a 'select' element has 'length' and 'item' properties on IE8
     typeof obj.nodeType != 'number' && (
     // a real array
-    Array.isArray(obj) ||
+    (Array.isArray(obj) ||
     // arguments
-    'callee' in obj ||
-    // HTMLCollection/NodeList
-    'item' in obj)
+    'callee' in obj || // HTMLCollection/NodeList
+    'item' in obj))
   );
 }
 
@@ -21794,7 +21792,7 @@ var ReactCompositeComponent = {
     }
     !(
     // TODO: An `isValidNode` function would probably be more appropriate
-    renderedElement === null || renderedElement === false || React.isValidElement(renderedElement)) ? process.env.NODE_ENV !== 'production' ? invariant(false, '%s.render(): A valid React element (or null) must be returned. You may have returned undefined, an array or some other invalid object.', this.getName() || 'ReactCompositeComponent') : _prodInvariant('109', this.getName() || 'ReactCompositeComponent') : void 0;
+    (renderedElement === null || renderedElement === false || React.isValidElement(renderedElement))) ? process.env.NODE_ENV !== 'production' ? invariant(false, '%s.render(): A valid React element (or null) must be returned. You may have returned undefined, an array or some other invalid object.', this.getName() || 'ReactCompositeComponent') : _prodInvariant('109', this.getName() || 'ReactCompositeComponent') : void 0;
 
     return renderedElement;
   },

@@ -24,19 +24,22 @@ describe('app component ajax call',() => {
     })
   })
 
-  it('subComp should render but only 1 div', function() {
+  it('RunDown should render but only 1 div', function() {
     let screen = shallow(<App />)
 
-    expect(screen.find('SubComp')).to.have.lengthOf(1);
+    expect(screen.find('RunDown')).to.have.lengthOf(1);
     expect(screen.find('div')).to.have.lengthOf(1);
   });
 
-  it('subComp should render 2 divs when full mount used', function() {
+  it('RunDown should render 2 divs when full mount used', function() {
     let screen = mount(<App />)
 
-    expect(screen.find('SubComp')).to.have.lengthOf(1);
+    expect(screen.find('RunDown')).to.have.lengthOf(1);
     expect(screen.find('div')).to.have.lengthOf(2);
 
+  });
+  it('testFunction should return 2', function() {
+    let screen = shallow(<App />)
+    expect(screen.instance().newFunction()).to.equal(2);
   })
-
 })
