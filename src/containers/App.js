@@ -2,7 +2,14 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import { hot } from 'react-hot-loader'
-import SubComp from './SubComp'
+import RunDown from './RunDown'
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+debugger;
+library.add(faAngleUp, faAngleDown)
 
 class App extends Component {
   constructor() {
@@ -10,23 +17,27 @@ class App extends Component {
     this.hostUrl = "http://localhost:8080/"
     this.state = { jsonTable: {} };
 
+    this.getInitialState();
+  }
+
+  getInitialState() {
     axios.get('/api')
       .then((response) => {
-        // console.log('in axio ' + JSON.stringify(response))
         this.setState({jsonTable: response.data})
       })
       .catch((err) => {
           console.log(err)
       })
-    // this.getProps();
   }
 
+  handleSet() {
+    return null;
+  }
 
   render() {
     return(
       <div>
-          { `${JSON.stringify(this.state.jsonTable)} we're here` }
-          <SubComp />
+          <RunDown handleSet={this.handleSet}/>
       </div>
     )
   }

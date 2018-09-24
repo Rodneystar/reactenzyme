@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 
-class SubComp extends Component {
+class RunDown extends Component {
 
 
   render() {
     return(
       <div>
-          this is the SubComp
+          this is the RunDown
       </div>
     )
   }
 }
 
 
-export default SubComp;
+export default RunDown;
