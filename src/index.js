@@ -1,15 +1,17 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from "./containers/App.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Root from './containers/Root'
 
 function render() {
 
 	ReactDOM.render(
-			<App />,
+			<Root />,
 		document.getElementById('root')
 	)
 };
 
 render();
+
+
