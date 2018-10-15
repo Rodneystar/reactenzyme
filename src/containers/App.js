@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { hot } from 'react-hot-loader'
-import HomePage from './HomePage'
-import AboutPage from './AboutPage'
-import Header from './Header'
 import { Route } from 'react-router-dom'
+import HomePage from './HomePage'
+import AboutPage from './about/AboutPage'
+import RunDown from './timer/RunDown'
+import CoursesPage from './courses/coursesPage'
+import Header from './Header'
 
 class App extends Component {
   constructor() {
@@ -18,10 +19,15 @@ class App extends Component {
 
   render() {
     return(
-      <div>
+      <div className='appContainer'>
         <Header />
         <Route exact path="/" component={HomePage}/>
         <Route path="/about" component={AboutPage}/>
+        <Route path="/courses" component={CoursesPage}/>
+        <Route path="/rundown" render={function() {
+            return <RunDown handleSet={() => null} />
+        }}/>
+
       </div>
     )
   }
