@@ -14,6 +14,7 @@ module.exports = {
     filename: '[name].js'
   },
   devServer: {
+    historyApiFallback: true,
     contentBase: './dist',
     hot: true,
     proxy: {
